@@ -1,6 +1,5 @@
 import Users from "../models/auth.js";
-import jwt from "jsonwebtoken";
-import cookie from 'cookie-parser';
+
 import bcrypt from 'bcrypt';
 import crypto from 'crypto';
 import nodemailer from 'nodemailer';

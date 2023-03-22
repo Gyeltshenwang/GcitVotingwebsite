@@ -1,5 +1,5 @@
-import jwt from 'jsonwebtoken'
-import Users from '../../models/auth.js';
+
+
 import CannidatesDetails from '../../models/canidates.js';
 
 import voterforchief from '../../models/votersforChief/chief.js';
