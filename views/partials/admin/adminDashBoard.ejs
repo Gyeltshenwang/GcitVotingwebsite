@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <section class="header">
+        <div class="logo">
+            <i class="ri-menu-line icon icon-0 menu"></i>
+            <h2>GCIT<span> Tshogen</span></h2>
+        </div>
+        <!-- <div class="search--notification--profile">
+            <div class="search">
+                <input type="text" placeholder="Search Scdule..">
+                <button><i class="ri-search-2-line"></i></button>
+            </div>
+            <div class="notification--profile">
+                
+                <div class="picon profile">
+                    <img src="imag/profile.jpg" alt="">
+                </div>
+            </div>
+        </div> -->
+    </section>
+    <section class="main">
+        <div class="sidebar">
+            <ul class="sidebar--items">
+                <li>
+                    <a href="#" >
+                        <span class="icon icon-1"><i class="ri-layout-grid-line"></i></span>
+                        <span class="sidebar--item">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/voters">
+                        <span class="icon icon-2"><i class="ri-user-2-line"></i></span>
+                        <span class="sidebar--item">Votes</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/winner">
+                        <span class="icon icon-3"><i class="ri-calendar-2-line"></i></span>
+                        <span class="sidebar--item" style="white-space: nowrap;">Result</span>
+                    </a>
+                </li>
+               
+                <li>
+                    <a href="#add_candidates">
+                        <span class="icon icon-4"><i class="ri-user-line"></i></span>
+                        <span class="sidebar--item">Candidates</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="sidebar--bottom-items">
+                <li>
+                    <a href="/">
+                        <span class="icon icon-8"><i class="ri-logout-box-r-line"></i></span>
+                        <span class="sidebar--item">Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="main--content">
+            <div class="overview">
+               
+                <div class="cards">
+                    
+                    <div class="card card-2" id="total_votes">
+                        <div class="card--data">
+                            <div class="card--content">
+                                <h5 class="card--title">Total Number of Voters</h5>
+                                <h1 class="align"><%= TotalVoters %></h1>
+                            </div>
+                            <i class="ri-user-line card--icon--lg"></i>
+                        </div>
+                        
+                    </div>
+                    <div class="card card-3">
+                        <div class="card--data">
+                            <div class="card--content">
+                                <h5 class="card--title">Total Number of Candidate</h5>
+                                <h1 class="align"><%= NumberofCannidates %></h1>
+                            </div>
+                            <i class="ri-calendar-2-line card--icon--lg"></i>
+                        </div>
+                        
+                    </div>
+                    <div class="card card-4">
+                        <div class="card--data">
+                            <div class="card--content">
+                                <h5 class="card--title">Number of Post</h5>
+                                <h1 class="align"><%= NumberofPost %></h1>
+                            </div>
+                            <i class="ri-hotel-bed-line card--icon--lg"></i>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+            <div class="doctors">
+                <div class="title" id="view_votes">
+                    <h2 class="section--title">Candidates</h2>
+                    <div class="doctors--right--btns">
+                        <a href="/results" class="add"><i class="ri-add-line"></i>View Votes</a>
+                    </div>
+                </div>
+                
+                <div class="doctors--cards">
+                    <%CannidatesDetails.forEach(canidate => { %>
+                      <a href="#" class="doctor--card">
+                        <div class="img--box--cover">
+                            <div class="img--box">
+                                <img src="<%= canidate.photo %>" alt="">
+                            </div>
+                        </div>
+                        <p class="free"><%= canidate.position %></p>
+                    </a>
+                    <% }) %>
+                   
+                    
+                    
+                </div>
+            </div>
+            <div class="recent--patients" >
+                <div class="title" id="add_candidates">
+                    <h2 class="section--title">Recent Candidates</h2>
+                    <a href="/addCannidatesDetails" class="add">
+                    
+                        <i class="ri-add-line"></i>Add Candidates
+                    </a>
+                </div>
+                <% if (CannidatesDetails.length > 0) { %>
+                     <div class="table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>index</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                                
+                            </tr>
+                        </thead>
+                       
+                        <tbody>
+                             <%CannidatesDetails.forEach((cannidates,index) => { %>
+                          <tr>
+                                <td><%= index %></td>
+                                <td><%= cannidates.name %></td>
+                                <td><%= cannidates.email %></td>
+                                <td><%= cannidates.position %></td>
+                               
+                                <td>
+                                    <span>
+                                        <a href="/admin/edit/<%= cannidates._id %>"><i class="ri-edit-line edit"></i></a> 
+                                        <a href="/admin/<%=cannidates._id %>">
+                                            <i class="ri-delete-bin-line delete">
+
+                                            </i></a>
+                                        </span>
+
+                                        
+                                        </td>
+                            </tr>
+                            
+                            </tr>
+                        <% }) %>
+                           
+                            
+                        </tbody>
+                    </table>
+                </div>
+                 
+                <% } else { %>
+                 
+                <% } %>
+               
+            </div>
+        </div>
+    </section>
+    <script src="js/active.js"></script>
+</body>
+
+</html>

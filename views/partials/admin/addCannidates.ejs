@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Add Candidates</title>
+	<link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+ 
+  <% if (errorMessage) { %>
+  <div class="message-error"> <h3><%= errorMessage %></h3> </div>
+ 
+<% } %>
+<div class="wrapper">
+    <div class="title" style="color: rgb(7, 7, 7)">
+      Add Candidates
+    </div>
+    <form action="/addCannidatesDetails" method="post"enctype="multipart/form-data" >
+    <div class="form">
+       <div class="inputfield">
+          <label>Name</label>
+          <input type="text" name = 'name'class="input" required="">
+       </div>
+       <div class="inputfield">
+        <label>Email</label>
+        <input type="text" name = 'email' class="input" required="">
+       </div>
+
+        <div class="inputfield">
+        <label>Menifesto</label>
+        <input type="text" name = 'menifesto' class="input" required="">
+       </div>
+          
+        <div class="inputfield">
+          <label>Position</label>
+          <div class="custom_select">
+            <select name = 'position' id ='position'>
+              <option name = 'position' value="" >Select</option>
+              <option name = 'position' value="Chief Counselor">Chief Counselors</option>
+              <option name = 'position' value="Boys HostelCounselor">Boys Hostel Counselor</option>
+              <option name = 'position' value="Girls Hostel Counselor">Girls Hostel Counselor</option>
+              <option name = 'position' value="Boys Cultural Counselor">Boys Cultural Counselor</option>
+              <option name = 'position' value="Girls Cultural Counselor">Girls Cultural Counselor</option>
+              <option name = 'position' value="Boys Prayer Counselor">Boys Prayer Counselor</option>
+              <option name = 'position' value="Girls Prayer Counselor">Girls Prayer Counselor</option>
+              <option name = 'position' value="Boys Games Counselor">Boys Games Counselor</option>
+              <option name = 'position' value="Girls Games Counselor">Girls Games Counselor</option>
+            </select>
+          </div>
+       </div>
+        <div class="inputfield">
+						<label for="photo">Photo</label>
+						<input type="file" name = 'photo'>
+<!-- accept="application/pdf" -->
+       </div>
+			 <div class="inputfield">
+					<label for="cv" >CV</label>
+				 	<input type="file" name = 'cv'>
+			 </div>
+			
+      <div class="inputfield">
+       
+        <input type="submit" value="ADD" class="btn">
+      </div>
+    </div>
+    </form>
+
+</div>
+
+</body>
+</html>

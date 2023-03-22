@@ -1,0 +1,28 @@
+<%- include('../partials/header') %>
+<img class="wave" src="img/wave.png">
+	<div class="container">
+		<div class="img">
+			<img src="img/bg.svg">
+		</div>
+		<div class="login-content">
+			<form action="/reset" method ='post'>
+				<img src="img/avatar.svg">
+				<h3 class="title">Reset password</h3>
+           		<div class="input-div one">
+           		   <div class="i">
+           		   		<i class="fas fa-user"></i>
+           		   </div>
+           		   <div class="div">
+           		   		<h5>Email</h5>
+           		   		<input type="email" class="input" name="email" required="">
+					 
+           		   </div>
+				 
+				
+           		</div>
+           		
+            	 <input type="submit" class="btn" value="reset" >
+            </form>
+        </div>
+    </div>
+<%- include('../partials/footer') %>

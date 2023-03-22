@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gcit Voting System</title>
+
+    <!-- font awesome cdn link  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/voter.css" />
+  </head>
+  <body>
+    <!-- header section starts  -->
+
+    <header>
+      <img src="img/logo2.png" class="logo" />
+
+      <div id="menu-bar" class="fas fa-bars"></div>
+
+      <nav class="navbar">
+        <a href="/">home</a>
+        <a href="/voters">cast vote</a>
+        <!-- <a href="#speciality">Login</a>
+        <a href="#popular">Register</a> -->
+        <a href="/results">view votes</a>
+        <a href="/winner">show results</a>
+      </nav>
+    </header>
+
+    <!-- header section ends -->
+
+    <!-- home section starts  -->
+
+    <section class="home" id="home">
+      <div class="content">
+        <h3>Selected Candidate For The Councillor Post</h3>
+        <p>
+          The following candidate below are the winner for this voting session who have acquired the highest vote and 
+          are now eligible for the post of Councillors.<br><br>
+          Congratulations
+        </p>
+      </div>
+
+      <div class="image">
+        <img src="img/result.jpg" alt="" class="pic1" />
+      </div>
+    </section>
+
+    <!-- chief counsilor -->
+    <form action="/voters" method="post">
+
+      
+       <section class="popular" id="popular">
+         <h3 class="heading"> NOMINATED AS A CHIEF COUNSELOR</h3>
+        
+       
+      <div class="box-container">
+        <% chief.forEach(cannidates => { %> 
+           
+            <div class="box">
+          <img src="<%=cannidates.photo %>" alt="" />
+          <h3><%= cannidates.name %></h3>
+          
+          <div class="details">
+            <a href="#" class="btn">Total Votes</a>
+            <a href="#" class="btn"><%= cannidates.voteCount %></a>
+           
+          </div>
+
+        
+        </div>
+      
+         <% }) %>
+      </div>
+          
+      
+<!-- 
+           </form> --> -->
+       
+         
+      
+      
+      
+    </section>
+
+    <!-- Boys hostel -->
+    <section class="popular" id="popular">
+         <h3 class="heading"> NOMINATED AS A BOYS HOSTEL COUNSELOR</h3>
+            
+      <div class="box-container">
+        <% boysHostel.forEach(cannidates => { %> 
+            
+           <div class="box">
+          <img src="<%=cannidates.photo %>" alt="" />
+          <h3><%= cannidates.name %></h3>
+          
+          <div class="details">
+            <a href="#" class="btn">Total Votes</a>
+            <a href="#" class="btn"><%= cannidates.voteCount %></a>
+           
+          </div>
+
+        
+        </div>
+         <% }) %>
+      </div>
+      
+      
+    </section>
+
+
+
+     
+
+<!-- girls cultu -->
+<section class="popular" id="popular">
+         <h3 class="heading">NOMINATED AS A GIRLS HOSTEL COUNSELOR</h3>
+            
+      <div class="box-container">
+        <% girlsHostel.forEach(cannidates => { %> 
+            
+           <div class="box">
+          <img src="<%=cannidates.photo %>" alt="" />
+          <h3><%= cannidates.name %></h3>
+          
+          <div class="details">
+            <a href="#" class="btn">Total Votes</a>
+            <a href="#" class="btn"><%= cannidates.voteCount %></a>
+           
+          </div>
+
+        
+        </div>
+         <% }) %>
+      </div>
+      
+      
+    </section>
+
+
+    <!-- boys culture -->
+    <section class="popular" id="popular">
+         <h3 class="heading">NOMINATED AS A BOYS CULTURAL COUNSELOR</h3>
+            
+      <div class="box-container">
+        <% boysCultures.forEach(cannidates => { %> 
+            
+       <div class="box">
+          <img src="<%=cannidates.photo %>" alt="" />
+          <h3><%= cannidates.name %></h3>
+          
+          <div class="details">
+            <a href="#" class="btn">Total Votes</a>
+            <a href="#" class="btn"><%= cannidates.voteCount %></a>
+           
+          </div>
+
+        
+        </div>
+         <% }) %>
+      </div>
+      
+      
+    </section>
+
+    <section class="popular" id="popular">
+         <h3 class="heading">NOMINATED AS A GIRLS CULTURAL COUNSELOR</h3>
+            
+      <div class="box-container">
+        <% girlsCultures.forEach(cannidates => { %> 
+            
+        <div class="box">
+          <img src="<%=cannidates.photo %>" alt="" />
+          <h3><%= cannidates.name %></h3>
+          
+          <div class="details">
+            <a href="#" class="btn">Total Votes</a>
+            <a href="#" class="btn"><%= cannidates.voteCount %></a>
+           
+          </div>
+
+        
+        </div>
+         <% }) %>
+      </div>
+      
+      
+    </section>
+
+    <!-- boys prayers -->
+    <section class="popular" id="popular">
+         <h3 class="heading">NOMINATED AS A BOYS PRAYERS COUNSELOR</h3>
+            
+      <div class="box-container">
+        <% boysPrayer.forEach(cannidates => { %> 
+            
+        <div class="box">
+          <img src="<%=cannidates.photo %>" alt="" />
+          <h3><%= cannidates.name %></h3>
+          
+         <div class="details">
+            <a href="#" class="btn">Total Votes</a>
+            <a href="#" class="btn"><%= cannidates.voteCount %></a>
+           
+          </div>
+
+          
+        </div>
+         <% }) %>
+      </div>
+      
+      
+    </section>
+
+    <!-- girls prayer -->
+
+     <section class="popular" id="popular">
+         <h3 class="heading">NOMINATED AS A GIRLS PRAYER COUNSELOR</h3>
+            
+      <div class="box-container">
+        <% girlsPrayer.forEach(cannidates => { %> 
+            
+        <div class="box">
+          <img src="<%=cannidates.photo %>" alt="" />
+          <h3><%= cannidates.name %></h3>
+          
+          <div class="details">
+            <a href="#" class="btn">Total Votes</a>
+            <a href="#" class="btn"><%= cannidates.voteCount %></a>
+           
+          </div>
+
+         
+        </div>
+         <% }) %>
+      </div>
+      
+      
+    </section>
+
+
+    <!-- boys games -->
+     <section class="popular" id="popular">
+         <h3 class="heading"> NOMINATED AS A BOYS GAME COUNSELOR</h3>
+            
+      <div class="box-container">
+        <% boysGames.forEach(cannidates => { %> 
+            
+        <div class="box">
+          <img src="<%=cannidates.photo %>" alt="" />
+          <h3><%= cannidates.name %></h3>
+          
+          <div class="details">
+            <a href="#" class="btn">Total Votes</a>
+            <a href="#" class="btn"><%= cannidates.voteCount %></a>
+           
+          </div>
+
+          
+        </div>
+         <% }) %>
+      </div>
+      
+      
+    </section>
+
+    <!-- GIRLS GAMES -->
+
+     <section class="popular" id="popular">
+         <h3 class="heading">NOMINATED AS A GIRLS GAMES COUNSELOR</h3>
+            
+      <div class="box-container">
+        <% girlsPrayer.forEach(cannidates => { %> 
+            
+        <div class="box">
+          <img src="<%=cannidates.photo %>" alt="" />
+          <h3><%= cannidates.name %></h3>
+          
+          <div class="details">
+            <a href="#" class="btn">Total Votes</a>
+            <a href="#" class="btn"><%= cannidates.voteCount %></a>
+           
+          </div>
+
+          
+        </div>
+         <% }) %>
+      </div>
+      
+      
+    </section>
+    <!-- <div class="container-flex">
+    <input type="submit" class="btn submit" value="Submit" />
+    </div>
+     -->
+    
+    </form> 
+
+
+       
+
+    
+
+    <footer class="footer">
+      <div class="footer__logo-box">
+        <picture class="footer__logo">
+          <source srcset="img/logo2.png 22x" media="(max-width: 37.5em)" />
+          <img
+            srcset="img/logo2.png 28x"
+            alt="Full logo"
+            src="img/logo2.png"
+          />
+        </picture>
+      </div>
+
+      <div class="row">
+        <div class="col-1-of-2">
+          <div class="footer__navigation">
+            <ul class="footer__list">
+              <li class="footer__item">
+                <a href="#" class="footer__link">GCIT Website</a>
+              </li>
+              <li class="footer__item">
+                <a href="#" class="footer__link">Contact us</a>
+              </li>
+              <li class="footer__item">
+                <a href="#" class="footer__link">Carrers</a>
+              </li>
+              <li class="footer__item">
+                <a href="#" class="footer__link">Privacy policy</a>
+              </li>
+              <li class="footer__item">
+                <a href="#" class="footer__link">Terms</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-1-of-2">
+          <p class="footer__copyright">
+            Built by
+            <a href="#" class="footer__link">Group 13 of Fourth Year's</a> for
+            the CSF202 project
+            <a href="#" class="footer__link">Advanced CSS and Sass</a>.
+            Copyright &copy; by Group 13. You are 100% allowed to use this
+            webpage for both personal and commercial use, but NOT to claim it as
+            your own design. A credit to the original author, Group 12 , is of
+            course highly appreciated!
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- custom js file link  -->
+    <script src="js/voters.js"></script>
+  </body>
+</html>
